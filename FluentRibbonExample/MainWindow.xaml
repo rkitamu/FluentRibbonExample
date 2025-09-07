@@ -10,8 +10,7 @@
         behavior:ViewModelInjectionBehavior.ViewModel="{x:Type local:MainWindowViewModel}"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
-        <Button Content="Fetch Zen" Command="{Binding FetchZenCommand}" />
-        <Label Content="{Binding Zen}" />
+        <Button Content="Zen Window" Command="{Binding NavigateToZenCommand}" />
+        <Button Content="Zen Window (using Fluent.Ribbon.Window)" Command="{Binding NavigateToZenAsNewWindowCommand}" />
     </StackPanel>
 </Window>
-s

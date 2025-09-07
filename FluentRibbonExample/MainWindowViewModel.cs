@@ -1,26 +1,23 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
-using FluentRibbonExample.Service.Http;
+using FluentRibbonExample.FluentZen;
 
 namespace FluentRibbonExample
 {
-    public partial class MainWindowViewModel: ObservableObject
+    public partial class MainWindowViewModel
     {
-        private IHttpClient _httpClient;
-
-        public MainWindowViewModel(IHttpClient httpClient)
+        [RelayCommand]
+        private void NavigateToZen()
         {
-            _httpClient = httpClient;
+            // めんどかった
         }
 
-        [ObservableProperty]
-        private string _zen = string.Empty;
-
         [RelayCommand]
-        private async Task FetchZen()
+        private void NavigateToZenAsNewWindow()
         {
-            var res = await _httpClient.GetStringAsync("https://api.github.com/zen");
-            Zen = res;
+            // TDOO: Navigation Logic
+            var window = Ioc.Default.GetRequiredService<FluentZenWindow>();
+            window.ShowDialog();
         }
     }
 }

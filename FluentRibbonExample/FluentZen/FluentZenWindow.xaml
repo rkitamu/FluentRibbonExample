@@ -1,0 +1,33 @@
+﻿<Fluent:RibbonWindow x:Class="FluentRibbonExample.FluentZen.FluentZenWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FluentRibbonExample.FluentZen"
+        xmlns:Fluent="urn:fluent-ribbon"
+        xmlns:Content="clr-namespace:FluentRibbonExample.Zen"
+        mc:Ignorable="d"
+        Title="FluentZen" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Fluent:Ribbon Grid.Row="0">
+        <!--Backstage-->
+        <Fluent:Ribbon.Menu>
+            <Fluent:Backstage>
+            </Fluent:Backstage>
+        </Fluent:Ribbon.Menu>
+
+        <!--Tabs-->
+        <Fluent:RibbonTabItem Header="Home">
+            <Fluent:RibbonGroupBox Header="Group">
+                <Fluent:Button Header="Green" />
+                <Fluent:Button Header="Grey" />
+            </Fluent:RibbonGroupBox>
+        </Fluent:RibbonTabItem>
+        </Fluent:Ribbon>
+        <Content:ZenControl Grid.Row="1" />
+    </Grid>
+</Fluent:RibbonWindow>
