@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
+using FluentRibbonExample.ControlNestedFluentZen;
 using FluentRibbonExample.FluentZen;
 using FluentRibbonExample.Service.Http;
 using FluentRibbonExample.Zen;
@@ -25,6 +26,9 @@ namespace FluentRibbonExample
 
             services.AddTransient<ZenControl>();
             services.AddSingleton<ZenViewModel>();
+
+            services.AddTransient<ControlNestedFluentZenWindow>();
+            services.AddTransient<Ribbon>();
 
             services.AddTransient<FluentZenWindow>();
 
