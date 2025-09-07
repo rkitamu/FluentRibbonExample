@@ -9,7 +9,9 @@
         d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel}"
         behavior:ViewModelInjectionBehavior.ViewModel="{x:Type local:MainWindowViewModel}"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <Button Content="Fetch Zen" Command="{Binding FetchZenCommand}" />
+        <Label Content="{Binding Zen}" />
+    </StackPanel>
 </Window>
+s
